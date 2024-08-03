@@ -26,7 +26,7 @@ h4 {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+ 
   
 }
 
@@ -65,33 +65,50 @@ input[type="checkbox"] {
   font-weight: bold;
 }
 
-.photo-section {
-  width: 15%;
-  text-align: center;
-}
 
-.photo-section img {
-  width: 100%;
-  height: auto;
-  border: 1px solid #ddd;
-}
+.picture-box {
+            padding: 30px;
+            display: flex; /* Enables flexbox layout */
+            justify-content: space-evenly; /* Distributes space between the boxes */
+            align-items: center; /* Centers items vertically */
+          
+        }
 
-.thumbprint-section {
-  width: 10%;
-  text-align: center;
-}
+        .thumbmark-box {
+            padding: 1px;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
 
-.thumbprint-section p {
-  font-weight: bold;
-}
+        .image-box {
+            padding: 1px;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+
+        .thumbmark-label, .file-upload-label {
+            display: block;
+            font-weight: bold;
+            color: #007bff;
+            position: relative;
+            top: 103px;
+        }
+
+
+
 </style>
 </head>
 <body>
 <div class="container">
-  <tr>
-    <th colspan="2">4. Learner/Trainee/Student (Clients) Classification:</th>
-</tr>
   <table>
+  <tr>
+    <th colspan="3">4. Learner/Trainee/Student (Clients) Classification:</th>
+</tr>
+  
     <tr>
       <td><input type="checkbox"> Students</td>
       <td><input type="checkbox"> Informal Workers</td>
@@ -152,10 +169,11 @@ input[type="checkbox"] {
       <td><input type="checkbox"> Persons with Disabilities</td>
       <td></td>
     </tr>
-  </table>
+ 
+<tr>
+  <th colspan="3">5. Type of Disability (for Persons with Disability Only): To be filled up by the TESDA personnel</th>
+</tr>
 
-  <h4>5. Type of Disability (for Persons with Disability Only): To be filled up by the TESDA personnel</h4>
-  <table>
     <tr>
       <td><input type="checkbox"> Mental/Intellectual</td>
       <td><input type="checkbox"> Visual Disability</td>
@@ -171,75 +189,94 @@ input[type="checkbox"] {
       <td><input type="checkbox"> Disability Due to Chronic Illness</td>
       <td><input type="checkbox"> Leaming Disability</td>
     </tr>
-  </table>
 
-  <h4>6. Causes of Disability (for Persons with Disability Only): To be filled up by the TESDA personnel</h4>
-  <table>
-    <tr>
+  <tr>
+  <th colspan="3">6. Causes of Disability (for Persons with Disability Only): To be filled up by the TESDA personnel</th>
+</tr>
+
+  <tr>
       <td><input type="checkbox"> Congenital/Inborn</td>
       <td><input type="checkbox"> Illness</td>
       <td><input type="checkbox"> Injury</td>
     </tr>
-  </table>
+ 
+<tr>
+  <th colspan="3">7. Taken NCAE/YP4SC Before?</th>
+</tr>
+<tr>
+<td colspan="3" style="text-align: center;">
+  <input type="checkbox"> Yes 
+  <input type="checkbox"> No 
+  <input type="text" placeholder="Where:" id="where" name="where"> 
+  <input type="text" placeholder="When:" id="when" name="when">
+</td>
+</tr>
 
-  <h4>7. Taken NCAE/YP4SC Before?</h4>
-  <table>
+  <tr>
+  <td colspan="3" style="text-align: center;">8. Name of Course/Qualification: <input type="text" id="course-qualification" readonly></td>
+</tr>
+
+<tr>
+  <tr>
+    <th colspan="3">9. If Scholar, What Type of Scholarship Package (TWSP, PESFA, STEP, others)?</th>
+  </tr>
+</tr>
+  <td colspan="3">9.What Type of Scholarship Package (TWSP, PESFA, STEP, others)?<input type="text" id="scholarship-package" readonly></td>
+
+
+
+  <tr>
+    <th colspan="3">10. Privacy Disclaimer</th>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;">
+        I hereby allow TESDA to use/post my contact details, name, email, cellphone/landline numbers, and other information I provided, which may be used for processing of my scholarship application, employment opportunities, and other purposes.
+    </td>
+</tr>
     <tr>
-      <td><input type="checkbox"> Yes</td>
-      <td><input type="checkbox"> No</td>
-    </tr>
-  </table>
-
-  <h4>8. Name of Course/Qualification</h4>
-  <input type="text" id="course-qualification" readonly>
-
-  <h4>9. If Scholar, What Type of Scholarship Package (TWSP, PESFA, STEP, others)?</h4>
-  <input type="text" id="scholarship-package" readonly>
-
-  <h4>10. Privacy Disclaimer</h4>
-  <p>I hereby allow TESDA to use/post my contact details, name, email, cellphone/landline nos. and other information I provided which maybe used for processing of my scholarship application, for employment opportunities and other purposes.</p>
-  <table>
-    <tr>
-      <td><input type="checkbox"> Agree</td>
+      <td colspan="2" style="text-align: center;"><input type="checkbox"> Agree</td>
       <td><input type="checkbox"> Disagree</td>
     </tr>
-  </table>
 
-  <h4>11. Applicant's Signature</h4>
-  <p>This is to certify that the information stated above is true and correct.</p>
+    <tr>
+      <th colspan="3">11. Applicant's Signature</th>
+    </tr>
+    <td colspan="3" style="text-align: center;">
+      This is to certify that the information stated above is true and correct.
+  </td>
 
-  <div class="signature-section">
-    <div class="signature-box">
-      <label for="applicant-signature">APPLICANT'S SIGNATURE OVER PRINTED NAME</label>
+<tr>
+      <td colspan="3"><label for="applicant-signature">APPLICANT'S SIGNATURE OVER PRINTED NAME</label>
       <input type="text" id="applicant-signature" readonly>
-    </div>
-
-    <div class="signature-box">
       <label for="date-accomplished">DATE ACCOMPLISHED</label>
-      <input type="text" id="date-accomplished" readonly>
+        <input type="text" id="date-accomplished" readonly></td>
     </div>
-  </div>
+</tr>
 
-  <div class="signature-section">
-    <div class="signature-box">
-      <label for="noted-by">Noted by:</label>
-      <input type="text" id="noted-by" readonly>
-    </div>
+<tr>
+  <td colspan="3"><label for="registrar_signature">REGISTRAR/SCHOOL ADMINISTRATOR:</label>
+    <input type="text" id="registrar_signature" name="registrar_signature">
+    <label for="date-received">DATE RECEIVED</label>
+      <input type="text" id="date-received" readonly></td>
+  </td>
+</tr>
 
-    <div class="signature-box">
-      <label for="date-received">DATE RECEIVED</label>
-      <input type="text" id="date-received" readonly>
-    </div>
-
-    <div class="photo-section">
-      <label for="photo">1x1 picture taken within the last 6 months</label>
-      <img src="#" alt="Photo" id="photo">
-    </div>
-
-    <div class="thumbprint-section">
-      <p>Right Thumbmark</p>
-    </div>
-  </div>
+</table>
+<table> 
+  <tr>
+      <td colspan="2" class="picture-box">
+          <div class="thumbmark-box">
+              <label for="thumbmark" class="thumbmark-label">Right Thumbmark</label>
+             
+          </div>
+      
+          <div class="image-box" id="imageBox">
+              <label for="imageUpload" class="file-upload-label">Picture </label>
+          </div>
+      </td>
+  </tr>
+</table>
+  
 </div>
 </body>
 </html>
