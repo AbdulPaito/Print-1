@@ -109,10 +109,17 @@ input[type="checkbox"] {
 
 .image-box {
   padding: 1px;
-  border: 1px solid black;
   width: 100px;
   height: 100px;
   text-align: center;
+  
+}
+.image-box img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: -14px;
+    
 }
 
 .thumbmark-label, .file-upload-label {
@@ -135,7 +142,63 @@ input[type="checkbox"] {
       <td><input type="checkbox" <?php echo strpos($data['classification'], 'Informal Workers') !== false ? 'checked' : ''; ?>> Informal Workers</td>
       <td><input type="checkbox" <?php echo strpos($data['classification'], 'Indigenous People & Cultural Communities') !== false ? 'checked' : ''; ?>> Indigenous People & Cultural Communities</td>
     </tr>
-    <!-- Repeat for other checkboxes -->
+    <tr>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Out-of-School-Youth') !== false ? 'checked' : ''; ?>> Out-of-School-Youth</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Industry Workers') !== false ? 'checked' : ''; ?>> Industry Workers</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Disadvantaged Women') !== false ? 'checked' : ''; ?>> Disadvantaged Women</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Solo Parent') !== false ? 'checked' : ''; ?>> Solo Parent</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Cooperatives') !== false ? 'checked' : ''; ?>> Cooperatives</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Victim of Natural Disasters and Calamities') !== false ? 'checked' : ''; ?>> Victim of Natural Disasters and Calamities</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Solo Parent\'s Children') !== false ? 'checked' : ''; ?>> Solo Parent's Children</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Family Enterprises') !== false ? 'checked' : ''; ?>> Family Enterprises</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Victim or Survivor of Human Trafficking') !== false ? 'checked' : ''; ?>> Victim or Survivor of Human Trafficking</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Senior Citizens') !== false ? 'checked' : ''; ?>> Senior Citizens</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Micro Entrepreneurs') !== false ? 'checked' : ''; ?>> Micro Entrepreneurs</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Drug Dependent Surrenderers') !== false ? 'checked' : ''; ?>> Drug Dependent Surrenderers</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Displaced HEls Teaching Personnel') !== false ? 'checked' : ''; ?>> Displaced HEls Teaching Personnel</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Family Members of Microentrepreneur') !== false ? 'checked' : ''; ?>> Family Members of Microentrepreneur</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Rebel Returnees or Decommissioned Combatants') !== false ? 'checked' : ''; ?>> Rebel Returnees or Decommissioned Combatants</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Displaced Workers') !== false ? 'checked' : ''; ?>> Displaced Workers</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Farmers and Fisherman') !== false ? 'checked' : ''; ?>> Farmers and Fisherman</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Inmates and Detainees') !== false ? 'checked' : ''; ?>> Inmates and Detainees</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'TVET Trainers') !== false ? 'checked' : ''; ?>> TVET Trainers</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Family Members of Farmers and Fisherman') !== false ? 'checked' : ''; ?>> Family Members of Farmers and Fisherman</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Wounded-in-Action AFP & PNP Personnel') !== false ? 'checked' : ''; ?>> Wounded-in-Action AFP & PNP Personnel</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Currently Employed Workers') !== false ? 'checked' : ''; ?>> Currently Employed Workers</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Community Tmg. & Employment Coordinator') !== false ? 'checked' : ''; ?>> Community Tmg. & Employment Coordinator</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Family Members of AFP and PNP Killed-and-Wounded in-Action') !== false ? 'checked' : ''; ?>> Family Members of AFP and PNP Killed-and-Wounded in-Action</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Employees with Contractual/Job-Order Status') !== false ? 'checked' : ''; ?>> Employees with Contractual/Job-Order Status</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Retuming/Repatriated Overseas Filipino Workers') !== false ? 'checked' : ''; ?>> Retuming/Repatriated Overseas Filipino Workers</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Family Members of Irimates and Detainees') !== false ? 'checked' : ''; ?>> Family Members of Irimates and Detainees</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'TESDA Alumni') !== false ? 'checked' : ''; ?>> TESDA Alumni</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Overseas Filipino Workers (OFW) Dependents') !== false ? 'checked' : ''; ?>> Overseas Filipino Workers (OFW) Dependents</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Uniformed Personnel') !== false ? 'checked' : ''; ?>> Uniformed Personnel</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Urban and Rural Poor') !== false ? 'checked' : ''; ?>> Urban and Rural Poor</td>
+      <td><input type="checkbox" <?php echo strpos($data['classification'], 'Persons with Disabilities') !== false ? 'checked' : ''; ?>> Persons with Disabilities</td>
+      <td></td>
+    </tr>
+
+
     <tr>
       <th colspan="3">5. Type of Disability (for Persons with Disability Only): To be filled up by the TESDA personnel</th>
     </tr>
@@ -144,7 +207,19 @@ input[type="checkbox"] {
       <td><input type="checkbox" <?php echo strpos($data['disability'], 'Visual Disability') !== false ? 'checked' : ''; ?>> Visual Disability</td>
       <td><input type="checkbox" <?php echo strpos($data['disability'], 'Orthopedic (Musculoskeletal) Disability') !== false ? 'checked' : ''; ?>> Orthopedic (Musculoskeletal) Disability</td>
     </tr>
-    <!-- Repeat for other checkboxes -->
+    <tr>
+        <td><input type="checkbox" <?php echo strpos($data['disability'], 'Hearing Disability') !== false ? 'checked' : ''; ?>> Hearing Disability</td>
+        <td><input type="checkbox" <?php echo strpos($data['disability'], 'Speech Impairment') !== false ? 'checked' : ''; ?>> Speech Impairment</td>
+        <td><input type="checkbox" <?php echo strpos($data['disability'], 'Multiple Disabilities, specify') !== false ? 'checked' : ''; ?>> Multiple Disabilities, specify</td>
+        </tr>
+        <tr>
+        <td><input type="checkbox" <?php echo strpos($data['disability'], 'Psychosocial Disability') !== false ? 'checked' : ''; ?>> Psychosocial Disability</td>
+        <td><input type="checkbox" <?php echo strpos($data['disability'], 'Disability Due to Chronic Illness') !== false ? 'checked' : ''; ?>> Disability Due to Chronic Illness</td>
+        <td><input type="checkbox" <?php echo strpos($data['disability'], 'Learning Disability') !== false ? 'checked' : ''; ?>> Learning Disability</td>
+        </tr>
+
+
+
     <tr>
       <th colspan="3">6. Causes of Disability (for Persons with Disability Only): To be filled up by the TESDA personnel</th>
     </tr>
@@ -215,11 +290,11 @@ input[type="checkbox"] {
       <td colspan="2" class="picture-box">
         <div class="thumbmark-box">
           <label for="thumbmark" class="thumbmark-label">Right Thumbmark</label>
-          <!-- Optionally display a thumbmark image -->
+         
         </div>
         <div class="image-box" id="imageBox">
           <label for="imageUpload" class="file-upload-label">Picture</label>
-          <img src="<?php echo htmlspecialchars($data['imageUpload']); ?>" alt="Profile Picture" width="100" height="100">
+          <img src="<?php echo htmlspecialchars($data['imageUpload']); ?>" alt="Profile Picture">
         </div>
       </td>
     </tr>
