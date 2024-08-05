@@ -10,6 +10,11 @@ $connection = mysqli_connect($host, $user, $password, $database);
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
 }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['print1_data'] = $_POST; // Save Print 1 data
+    header('Location: print2.php'); // Redirect to Print 2
+    exit;
+}
 
 // Get ID from URL
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -84,10 +89,16 @@ $education = !empty($data['educational_attainment']) ? explode(',', $data['educa
             background-color: #f4f4f4;
         }
         @media print {
-            .no-print {
-                display: none;
-            }
-        }
+    .no-print {
+        display: none; /* Hide elements with class 'no-print' */
+    }
+    /* Hide specific unwanted elements; replace with actual selectors if needed */
+    .header-info, /* Example selector for unwanted header information */
+    .footer-info { /* Example selector for unwanted footer information */
+        display: none;
+    }
+}
+
     </style>
     <style>
            /* General styles */
@@ -235,7 +246,15 @@ $education = !empty($data['educational_attainment']) ? explode(',', $data['educa
     height: auto;
     max-height: 150px;
 }
+.no-print button{
+    color: red;
+}
     </style>
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
 </head>
 <body>
     <div class="page">
@@ -411,6 +430,11 @@ $education = !empty($data['educational_attainment']) ? explode(',', $data['educa
     <a href="print2.php?id=<?php echo htmlspecialchars($id); ?>">
         <button>Proceed to Page 2</button>
     </a>
+
+
+    <div class="no-print">
+            <button onclick="printPage()">Print</button>
+        </div>
 </div>
 </body>
 </html>

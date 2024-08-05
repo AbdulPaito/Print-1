@@ -13,6 +13,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['print2_data'] = $_POST; // Save Print 2 data
+    header('Location: generate_pdf.php'); // Redirect to PDF generation
+    exit;
+}
 
 // Fetch data from database based on a specific ID (you might want to adjust the ID or criteria)
 $user_id = isset($_GET['id']) ? intval($_GET['id']) : 1; // Default to ID 1 for demonstration
@@ -129,7 +134,30 @@ input[type="checkbox"] {
   position: relative;
   top: 103px;
 }
+.center {
+            text-align: center;
+            margin-top: 10px; /* Add margin to separate from the table */
+        }
+
+        .center button {
+            padding: 5px 10px; /* Reduced padding */
+            font-size: 14px; /* Reduced font size */
+            background-color: rgb(255, 255, 255);
+            color: red;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
+
+        .center button:hover {
+            background-color: rgb(14, 147, 236); /* Change background color on hover */
+        }
 </style>
+<script>
+        function printPage() {
+            window.print();
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -299,6 +327,11 @@ input[type="checkbox"] {
       </td>
     </tr>
   </table>
+
+  <div class="center">
+            <button onclick="printPage()">Print</button>
+        </div>
+
 </div>
 </body>
 </html>
